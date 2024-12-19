@@ -2,96 +2,109 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ERP辅助系统</title>
     <style>
         body {
-            width: 320px;
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.5;
-            color: #202124;
-            background-color: #FFFFFF;
-            margin: 0;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border-radius: 8px;
-        }
-
-        h3 {
-            color: #6F2C91;
-            font-size: 24px;
-            font-weight: 500;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-
-        .description {
-            font-size: 14px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .button-container {
+            background-color: #e0e0e0; /* 背景颜色，适合新拟态风格 */
             display: flex;
-            justify-content: space-between;
-            margin: 20px 0;
+            justify-content: center; /* 水平居中 */
+            align-items: center; /* 垂直居中 */
+            margin: 0; /* 去除默认边距 */
+            height: 100%; /* 高度设置为100% */
         }
 
-        button {
-            flex: 1;
-            padding: 12px;
-            margin: 0 5px;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: 500;
-            transition: background-color 0.3s ease;
-            font-size: 16px;
+        .container {
+            width: 320px; /* 容器宽度 */
+            border-radius: 20px; /* 圆角 */
+            background-color: #f0f0f0; /* 卡片背景颜色，较亮的颜色 */
+            padding: 20px; /* 内边距 */
+            box-shadow: 8px 8px 15px rgba(160, 160, 160, 0.3), -8px -8px 15px rgba(255, 255, 255, 1); /* 新拟态效果的阴影 */
+            text-align: center; /* 文字居中 */
+            margin: 0; /* 去除上下左右的边距 */
         }
-
-        #startButton {
-            background-color: #6F2C91;
+        h3 {
+            color: #333; /* 主要标题颜色 */
+            margin-bottom: 10px; /* 标题下方间距 */
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7); /* 轻微的文字阴影 */
         }
-
-        #startButton:hover {
-            background-color: #5B237A;
+        .card-text {
+            color: #555; /* 文字颜色 */
+            margin: 5px 0; /* 上下间距 */
+            text-align: left;
+            position: relative; /* 定位为相对 */
+            padding: 5px; /* 内边距 */
+            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.7); /* 轻微的文字阴影 */
         }
-
-        #stopButton {
-            background-color: #A65EBC;
+        .question{
+            border-color: #ff0000; /* 边框颜色 */
+            border-width: 1px; /* 边框大小 */
+            border-style: solid; /* 边框样式 */
+            text-align: left;
         }
-
-        #stopButton:hover {
-            background-color: #8E4FA3;
+        .card-question {
+            color: #ff0000; /* 文字颜色 */
+            size: 10px; /* 字体大小 */
+            margin: 5px 0; /* 上下间距 */
+            text-align: left;
+            position: relative; /* 定位为相对 */
+            padding: 5px; /* 内边距 */
+            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.7); /* 轻微的文字阴影 */
         }
-
         .radio-container {
-            margin-bottom: 15px;
-            text-align: center;
+            margin: 10px 0; /* 上下间距 */
         }
-
         .radio-container label {
-            margin-right: 15px;
-            font-size: 14px;
+            cursor: pointer; /* 鼠标悬停时为手指形状 */
+            color: #666; /* 标签文字颜色 */
         }
-
+        button {
+            width: 48%; /* 按钮宽度 */
+            padding: 10px; /* 按钮内边距 */
+            border: none; /* 去除边框 */
+            border-radius: 20px; /* 圆角 */
+            font-weight: bold; /* 加粗字体 */
+            cursor: pointer; /* 鼠标悬停时为手指形状 */
+            transition: box-shadow 0.3s ease; /* 阴影过渡效果 */
+            margin-top: 10px; /* 按钮上方间距 */
+            background-color: #ffffff; /* 按钮背景颜色 */
+            box-shadow: 5px 5px 10px rgba(160, 160, 160, 0.2), -5px -5px 10px rgba(255, 255, 255, 1); /* 新拟态阴影 */
+        }
+        #startButton {
+            color: #007bff; /* 开始按钮文本颜色 */
+        }
+        #stopButton {
+            color: #dc3545; /* 停止按钮文本颜色 */
+        }
+        button:hover {
+            box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.5); /* 鼠标悬停阴影效果 */
+        }
     </style>
 </head>
 <body>
-    <h3>妙手ERP辅助插件</h3>
-    <p class="description">请在下方选择采集方式，然后点击开始采集按钮</p>
-    <p class="description">方式一：商品详情页采集,当前延迟1分30秒</p>
-    <p class="description">方式二：商品列表页采集,当前延迟1分</p>
-  
-    <div class="radio-container">
-        <label><input type="radio" name="collectionMethod" value="方式一" checked /> 方式一</label>
-        <label><input type="radio" name="collectionMethod" value="方式二" /> 方式二</label>
+    <div class="container">
+        <h1>妙手ERP辅助采集系统</h1>
+        <p class="card-text">该插件需要搭配妙手跨境ERP插件一起使用</p>
+        <p class="card-text">请在下方选择采集方式，然后点击开始采集按钮</p>
+        <p class="card-text">方式一：商品详情页采集, 当前设置延迟1分30秒</p>
+        <p class="card-text">方式二：商品列表页采集, 当前设置延迟1分</p>
+        <p class="card-text">采集过程中请勿关闭当前页面</p>
+        <div class="question">
+            <p class="card-question">注意事项：</p>
+            <p class="card-question">1.如果出现待采集为0的情况，请刷新页面即可.</p>
+            <p class="card-question">2.结束采集按钮可能会因为平台问题没反应，如果出现此类情况，刷新一下页面即可停止采集</p>
+            <p class="card-question">3.由于破平台的逆天设置，概率会触发人机验证，这时，可能需要自己手动过验证</p>
+        </div>
+        <div class="radio-container">
+            <label><input type="radio" name="collectionMethod" value="方式一" checked /> 方式一</label>
+            <label><input type="radio" name="collectionMethod" value="方式二" /> 方式二</label>
+        </div>
+        <div>
+            <button id="startButton">开始采集</button>
+            <button id="stopButton">停止采集</button>
+        </div>
     </div>
 
-    <div class="button-container">
-        <button id="startButton">开始采集</button>
-        <button id="stopButton">停止采集</button>
-    </div>
-    <script src="popup.js"></script>
+    <script src="popup.js"></script> <!-- 引入外部JavaScript文件 -->
 </body>
 </html>
