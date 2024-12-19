@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "妙手ERP辅助插件",
+    "version": "0.0.1",
+    "description": "妙手erp跨境自动采集插件,by叱咤月海鱼鱼猫",
+    "permissions": [
+      "activeTab",
+      "scripting",
+      "storage",
+      "tabs"
+    ],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "/image/mserp.png",
+        "48": "/image/mserp.png",
+        "128": "/image/mserp.png"
+      }
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "host_permissions": [
+      "https://www.temu.com/*"
+    ]
+  }

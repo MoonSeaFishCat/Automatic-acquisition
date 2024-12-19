@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ERP辅助系统</title>
+    <style>
+        body {
+            width: 320px;
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.5;
+            color: #202124;
+            background-color: #FFFFFF;
+            margin: 0;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+
+        h3 {
+            color: #6F2C91;
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .description {
+            font-size: 14px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+
+        button {
+            flex: 1;
+            padding: 12px;
+            margin: 0 5px;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            font-size: 16px;
+        }
+
+        #startButton {
+            background-color: #6F2C91;
+        }
+
+        #startButton:hover {
+            background-color: #5B237A;
+        }
+
+        #stopButton {
+            background-color: #A65EBC;
+        }
+
+        #stopButton:hover {
+            background-color: #8E4FA3;
+        }
+
+        .radio-container {
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .radio-container label {
+            margin-right: 15px;
+            font-size: 14px;
+        }
+
+    </style>
+</head>
+<body>
+    <h3>妙手ERP辅助插件</h3>
+    <p class="description">请在下方选择采集方式，然后点击开始采集按钮</p>
+    <p class="description">方式一：商品详情页采集,当前延迟1分30秒</p>
+    <p class="description">方式二：商品列表页采集,当前延迟1分</p>
+  
+    <div class="radio-container">
+        <label><input type="radio" name="collectionMethod" value="方式一" checked /> 方式一</label>
+        <label><input type="radio" name="collectionMethod" value="方式二" /> 方式二</label>
+    </div>
+
+    <div class="button-container">
+        <button id="startButton">开始采集</button>
+        <button id="stopButton">停止采集</button>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>
