@@ -53,7 +53,7 @@ ps：备注：需要手动登录erp网站，保持登录状态即可
 
 ## License
 
-该项目采用 MIT License，详细信息请参考 [LICENSE](LICENSE) 文件。
+该项目采用 AGPL-3.0 license，详细信息请参考 [LICENSE](LICENSE) 文件。
 
 ## 联系信息
 
