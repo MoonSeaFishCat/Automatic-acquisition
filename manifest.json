@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "妙手ERP辅助插件",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "description": "妙手erp跨境自动采集插件,by叱咤月海鱼鱼猫",
     "permissions": [
       "activeTab",
@@ -9,12 +9,17 @@
       "storage",
       "tabs"
     ],
+    "icons": {
+      "16": "/image/defult.png",
+      "48": "/image/defult.png",
+      "128": "/image/defult.png"
+  },
     "action": {
       "default_popup": "popup.html",
       "default_icon": {
-        "16": "/image/mserp.png",
-        "48": "/image/mserp.png",
-        "128": "/image/mserp.png"
+        "16": "/image/defult.png",
+        "48": "/image/defult.png",
+        "128": "/image/defult.png"
       }
     },
     "background": {

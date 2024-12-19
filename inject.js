@@ -2,7 +2,7 @@
     const crawlButton = Array.from(document.querySelectorAll('button')).find(btn => btn.innerText.includes("采集此商品"));
     if (crawlButton) {
         crawlButton.click(); // 点击采集按钮
-        console.log('采集按钮已点击。');
+        console.log('当前商品已采集。');
         window.localStorage.setItem('productAcquired', 'true');
 
         // 设置延迟60秒后关闭当前标签页

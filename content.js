@@ -22,7 +22,7 @@
 
         // 创建标题
         const title = document.createElement('h4');
-        title.innerText = '日志窗口';
+        title.innerText = '辅助采集系统--日志窗口';
         title.style.margin = '0 0 10px';
         logWindow.appendChild(title);
 
@@ -68,8 +68,7 @@
 
     async function collectionMethodOne() {
         const productDivs = document.querySelectorAll('div.EKDT7a3v[style*="width:20%"]');
-        logMessage(`准备采集 ${productDivs.length} 项商品...`);
-
+        logMessage(`当前使用方式一采集，共 ${productDivs.length} 项商品...`);
         collecting = true; // 开始采集
         for (const productDiv of productDivs) {
             if (!collecting) break; // 检查是否要停止采集
@@ -80,21 +79,21 @@
             h3Element.click();
 
             // 等待页面加载
-            await delay(30000);
-            // 向背景脚本请求在所有temu.com页面中注入inject.js
-            chrome.runtime.sendMessage({ action: 'injectScriptToAllTabs' });
+            await delay(30000); //考虑到网络问题，等待时间设为30秒
 
+            // 向背景脚本请求在所有temu.com页面中注入inject.js
+            chrome.runtime.sendMessage({ action: 'injectScriptToAllTabs' });//目前最佳实践是在background.js中处理所有页面的注入请求，而不是在content.js中处理
             // 等待60秒后继续
             await delay(60000);
         }
 
         collecting = false; // 结束采集
-        logMessage('商品采集完成！');
+        alert('商品采集完成！');
     }
 
     async function collectionMethodTwo() {
         const productDivs = document.querySelectorAll('div.EKDT7a3v[style*="width:20%"]');
-        logMessage(`准备采集 ${productDivs.length} 项商品...`);
+        logMessage(`当前使用方式二采集，共 ${productDivs.length} 项商品...`);
 
         collecting = true; // 开始采集
         for (const productDiv of productDivs) {
@@ -126,7 +125,7 @@
         }
 
         collecting = false; // 结束采集
-        logMessage('分类采集完成！');
+        alert('分类采集完成！');
     }
 
     // 创建日志窗口
